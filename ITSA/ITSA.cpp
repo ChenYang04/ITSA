@@ -1,7 +1,16 @@
 ﻿#include <iostream>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    float x, y;
+
+    cin >> x >> y;
+
+    if ((x <= 100) | (y <= 100))
+    {
+        cout << "inside";
+    }
+    else cout << "outsite";
 }
 
