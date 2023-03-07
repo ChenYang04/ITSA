@@ -5,9 +5,7 @@ int main()
 	int s;
 	cout << "輸入月份 = ";
 	cin >> s;
-
 	
-
 	switch (s)
 	{
 	case 3:
