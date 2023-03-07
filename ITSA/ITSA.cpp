@@ -10,7 +10,7 @@ int main()
     cin >> d;
 
     i = d * 1.6;
-    cout << fixed << setprecision(1) << i << endl;
+    
     cout << fixed << setprecision(1) <<i << endl;
 
 
