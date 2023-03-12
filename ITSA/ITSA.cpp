@@ -4,15 +4,15 @@ using namespace std;
 
 int main()
 {
-    cout << "輸入欲轉換之英哩數:";
-    int d;
-    float i;
-    cin >> d;
-
-    i = d * 1.6;
     
-    cout << fixed << setprecision(1) <<i << endl; //setprecision(1) 直接取小數點1位
+    int d,c;
+    float i,j;
+    cin >> d >> c;
+    
+    i = d * 1.6;
+    j = c * 1.6;
+    cout << fixed << setprecision(1) <<i << '\n' << flush << j << endl; //setprecision(1) 直接取小數點1位
 
-
+    return 0;
 }
 
