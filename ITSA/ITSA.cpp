@@ -1,37 +1,36 @@
 ﻿#include <iostream>
-#include <cmath>
 using namespace std;
 
 int main() {
-    
+    int start_hour, start_minute; // 宣告開始時間的小時和分鐘
+    int end_hour, end_minute; // 宣告離開時間的小時和分鐘
+    int total_minutes; // 總停車時間（單位：分鐘）
+    int total_fee; // 總停車費用
 
-    int s_hour, s_minute, e_hour, e_minute;
-    cout << "請輸入開始時間（時 分）：";
-    cin >> s_hour >> s_minute;
+    // 讀入開始時間
+    cout << "請輸入開始時間（小時 分鐘）：";
+    cin >> start_hour >> start_minute;
 
-    cout << "請輸入離開時間（時 分）：";
-    cin >> e_hour >> e_minute;
+    // 讀入離開時間
+    cout << "請輸入離開時間（小時 分鐘）：";
+    cin >> end_hour >> end_minute;
 
-    
-    int elapsed_minutes = (e_hour - s_hour) * 60 +((e_minute + (60 - s_minute)));// 計算停車時間（單位：分鐘）
+    // 將開始時間和離開時間轉換成總停車時間（單位：分鐘）
+    total_minutes = (end_hour - start_hour) * 60 + (end_minute - start_minute);
 
     // 計算停車費用
-    int parking_fee = 0;
-    if (elapsed_minutes <= 120) 
-    {  
-        parking_fee = 30;// 停車時間在 2 小時以內
+    if (total_minutes <= 120) { // 不到 2 小時
+        total_fee = (total_minutes + 29) / 30 * 30;
     }
-    else if (elapsed_minutes <= 240) 
-    {  
-        parking_fee = 120 + ((elapsed_minutes - 120) / 30) * 40;// 停車時間在 2 ~ 4 小時之間
+    else if (total_minutes < 240) { // 超過 2 小時但不到 4 小時
+        total_fee = 240 + (total_minutes - 120 + 29) / 30 * 40;
     }
-    else 
-    {
-        parking_fee = 240 + ((elapsed_minutes - 240) / 30) * 60;// 停車時間超過 4 小時
+    else { // 超過 4 小時以上
+        total_fee = 480 + (total_minutes - 240 + 29) / 30 * 60;
     }
 
-    
-    cout << "停車費用為：" << parking_fee << " 元\n";// 輸出結果
+    // 輸出停車費用
+    cout << "停車費用為：" << total_fee << " 元" << endl;
 
     return 0;
 }
