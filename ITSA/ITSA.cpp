@@ -11,7 +11,7 @@ int main()
 
     i = d * 1.6;
     
-    cout << fixed << setprecision(2) <<i << endl;
+    cout << fixed << setprecision(1) <<i << endl; //setprecision(1) 直接取小數點1位
 
 
 }
