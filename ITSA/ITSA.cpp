@@ -6,14 +6,9 @@ int main()
 {
 	int str_h, str_m, end_h, end_m;
 	double fee = 0;
-	
-	cout <<"請輸入進入時間(時 分):";
 	cin >> str_h >> str_m;
-	cout <<"請輸入離開時間(時 分):";
 	cin >> end_h >> end_m;
-
 	double x = (end_h - str_h) + (end_m - str_m) / 60;
-
 	if (x <= 2.0)
 	{
 		fee = ceil(x * 2) * 30.0;
@@ -26,8 +21,7 @@ int main()
 	{
 		fee = 280.0 + ceil(x - 4.0) * 60.0;
 	}
-
-	cout << "需繳交的停車費用為：" << fee << "元" << endl;
+	cout << fee  << endl;
 	return 0;
 }
 
