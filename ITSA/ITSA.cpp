@@ -1,95 +1,46 @@
 ﻿#include <iostream>
+#include <cmath>
 using namespace std;
 
-int main()
-{
-	int a, b;
-	int c, d;
-	cin >> a >> b >> c >> d;
-	int i,j;
-	int x, y;
-	int z;
+int main() {
+    
 
-	switch (a)
-	{
-	case 13:
-		i = 1;
-		break;
-	case 14:
-		i = 2;
-		break;
-	case 15:
-		i = 3 ;
-		break;
-	case 16:
-		i = 4;
-		break;
-	case 17:
-		i = 5 ;
-		break;
-	case 18:
-		i = 6 ;
-		break;
-	case 19:
-		i = 7 ;
-		break;
-	case 20:
-		i = 8 ;
-		break;
-	case 21:
-		i = 9;
-		break;
-	case 22:
-		i = 10;
-		break;
-	case 23:
-		i = 11;
-		break;
-	case 24:
-		i = 12;
-		break;
-	}
-	switch (c)
-	{
-	case 13:
-		j = 1;
-		break;
-	case 14:
-		j = 2;
-		break;
-	case 15:
-		j = 3;
-		break;
-	case 16:
-		j = 4;
-		break;
-	case 17:
-		j = 5;
-		break;
-	case 18:
-		j = 6;
-		break;
-	case 19:
-		j = 7;
-		break;
-	case 20:
-		j = 8;
-		break;
-	case 21:
-		j = 9;
-		break;
-	case 22:
-		j = 10;
-		break;
-	case 23:
-		j = 11;
-		break;
-	case 24:
-		j = 12;
-		break;
-	}
+    int s_hour, s_minute, e_hour, e_minute;
+    cout << "請輸入開始時間（時 分）：";
+    cin >> s_hour >> s_minute;
 
-	z = (i + j);
+    cout << "請輸入離開時間（時 分）：";
+    cin >> e_hour >> e_minute;
 
+    
+    int elapsed_minutes = (e_hour - s_hour) * 60 +((e_minute + (60 - s_minute)));// 計算停車時間（單位：分鐘）
+
+    // 計算停車費用
+    int parking_fee = 0;
+    if (elapsed_minutes <= 120) 
+    {  
+        parking_fee = 30;// 停車時間在 2 小時以內
+    }
+    else if (elapsed_minutes <= 240) 
+    {  
+        parking_fee = 120 + ((elapsed_minutes - 120) / 30) * 40;// 停車時間在 2 ~ 4 小時之間
+    }
+    else 
+    {
+        parking_fee = 240 + ((elapsed_minutes - 240) / 30) * 60;// 停車時間超過 4 小時
+    }
+
+    
+    cout << "停車費用為：" << parking_fee << " 元\n";// 輸出結果
+
+    return 0;
 }
+
+
+
+
+
+
+
+
 
