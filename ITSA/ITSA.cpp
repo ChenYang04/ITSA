@@ -1,8 +1,16 @@
 ﻿#include <iostream>
+using namespace std;
 
 int main()
 {
-	std::cout << "Hello World";
+	int n;
+	int sum = 0;
+	cin >> n;
+	for (int i = 1; i <= n; i++)
+	{
+		if (i % 3 == 0) sum += i;
+	}
+	cout << sum << endl;
 }
 
 
