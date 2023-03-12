@@ -5,13 +5,13 @@ using namespace std;
 int main()
 {
     
-    int d,c;
-    float i,j;
-    cin >> d >> c;
+    int d;
+    float i;
+    cin >> d;
     
     i = d * 1.6;
-    j = c * 1.6;
-    cout << fixed << setprecision(1) <<i << '\n' << flush << j << endl; //setprecision(1) 直接取小數點1位
+    
+    cout << fixed << setprecision(1) <<i << endl; //setprecision(1) 直接取小數點1位
 
     return 0;
 }
