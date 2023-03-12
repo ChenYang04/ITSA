@@ -5,21 +5,21 @@ using namespace std;
 int main()
 {
 	int str_h, str_m, end_h, end_m;
-	double fee = 0;
+	int fee = 0;
 	cin >> str_h >> str_m;
 	cin >> end_h >> end_m;
-	double x = (end_h - str_h) + (end_m - str_m) / 60;
-	if (x <= 2.0)
+	int x = (end_h - str_h) + (end_m - str_m) / 60;
+	if (x <= 2)
 	{
-		fee = ceil(x * 2) * 30.0;
+		fee = ceil(x * 2) * 30;
 	}
-	else if (x <= 4.0)
+	else if (x <= 4)
 	{
-		fee = 120.0 + ceil((x - 2.0) * 2) * 40.0;
+		fee = 120 + ceil((x - 2) * 2) * 40;
 	}
 	else
 	{
-		fee = 280.0 + ceil(x - 4.0) * 60.0;
+		fee = 280 + ceil(x - 4) * 60;
 	}
 	cout << fee  << endl;
 	return 0;
