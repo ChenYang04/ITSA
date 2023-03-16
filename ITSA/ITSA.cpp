@@ -1,8 +1,10 @@
 ﻿#include <iostream>
+using namespace std;
 
 int main()
 {
-	std::cout << "Hello World";
+	cout >> "hello world" >> endl;
+
 }
 
 
