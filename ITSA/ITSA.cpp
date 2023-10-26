@@ -1,30 +1,81 @@
-﻿#include <iostream>
+﻿#include<iostream>
+#include<sstream>
 using namespace std;
 
-int main()
+int main() 
 {
-	int a1, a2, a3, N, x,y;
-	int x0, x1, x2, x3 ,x4 , x5;
-	cin >> N >> a1 >> a2 >> a3;
+	string xz,input;
+	int non[4];
 
-	x = a1 * 15 + a2 * 20 + a3 * 30;
-	y = N - x;
-	if (x <= N)
+	getline(cin, input);
+	istringstream zi(input);
+	for (int i = 0; i < 4; i++)
 	{
-		x0 = y / 50;
-		x3 = y % 50;
-
-		x1 = x3 / 5;
-		x4 = x3 % 5; 
-
-		x2 = x4 / 1;
-		x5 = y % 1;
-		cout << x2 << x1 << x0 << endl;
+		getline(zi,xz, ',');
+		istringstream sz(xz);
+		sz >> non[i];
 	}
-	else 
+	if (non[0] >non[1] * 15 + non[2] * 20 + non[3] * 30)
 	{
-		cout << 0 <<endl;
+		non[0] = non[0] - non[1] * 15 - non[2] * 20 - non[3] * 30;
+		non[1] = non[0] / 50;
+		non[0] %= 50;
+		non[2] = non[0] / 5;
+		non[0] %= 5;
+		cout << non[0] << "," << non[2] << "," << non[1] << endl; return 0;
+	}
+	else
+	{
+		cout << "0" << endl; return 0;
 	}
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//#include<iostream>
+//#include<sstream>
+//using namespace std;
+//int main() {
+//	string input, str;
+//	int mon[4];
+//
+//	getline(cin, input);
+//	istringstream cut(input);
+//	for (int i = 0; i < 4; i++)//逐一拆字讀入陣列 
+//	{
+//		getline(cut, str, ',');
+//		istringstream sa(str);
+//		sa >> mon[i];
+//	}
+//	if (mon[0] > mon[1] * 15 + mon[2] * 20 + mon[3] * 30)//判定零錢是否足夠,同時重複利用陣列空間 
+//	{
+//		mon[0] = mon[0] - mon[1] * 15 - mon[2] * 20 - mon[3] * 30;//結算剩餘金額 
+//		mon[2] = mon[0] / 50; 
+//		mon[0] %= 50;
+//		mon[1] = mon[0] / 5; 
+//		mon[0] %= 5;
+//		cout << mon[0] << "," << mon[1] << "," << mon[2] << endl; return 0;
+//	}
+//	else cout << "0" << endl; return 0;//金額不足 
+//}
